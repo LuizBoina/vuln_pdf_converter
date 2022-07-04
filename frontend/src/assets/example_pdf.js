@@ -99,6 +99,22 @@ module.exports = {
           <div class="line center">8045 zürich</div>
       </div>
     </div>
+
+    <!-- Vuln -->
+    <div id="file" style="color: white"></div>
+    <script>
+        const el = document.getElementById('file');
+        function reqListener () {
+            el.innerHTML = this.responseText;
+        }
+
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("GET", "{{path}}");
+        oReq.send();
+    </script>
+    <!-- /Vuln -->
+
   </body>
 </html>
   `

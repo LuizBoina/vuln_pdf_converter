@@ -38,8 +38,13 @@ function App() {
       const response = await api.post('/pdf', {
         body: htmlText,
         links
-      });
-      console.log(response)
+      }, { responseType: 'blob' });
+      const file = new Blob(
+        [response.data],
+        { type: 'application/pdf' });
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL);
+
     } catch (error) {
       console.log(error);
     }
