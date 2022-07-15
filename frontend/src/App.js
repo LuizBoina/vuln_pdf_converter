@@ -66,10 +66,10 @@ function App() {
             {links.map(({ name, uri }, idx) => (
               <div key={`idx-${idx + 1}`}>
                 <input
-                  onChange={(e) => changeLinkVal(false, idx, e.target.value)}
+                  onChange={(e) => changeLinkVal(true, idx, e.target.value)}
                   value={name} className="link-input" placeholder="nome da tag" />
                 <input
-                  onChange={(e) => changeLinkVal(true, idx, e.target.value)}
+                  onChange={(e) => changeLinkVal(false, idx, e.target.value)}
                   value={uri} className="link-input" placeholder="link" />
                 <span className="link-btn" onClick={() => removeLink(idx)}>-</span>
               </div>
